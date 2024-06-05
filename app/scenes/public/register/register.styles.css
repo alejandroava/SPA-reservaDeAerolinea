@@ -1,0 +1,41 @@
+.register_container{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register_form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    width: 420px;
+    gap: var(--spacing-small);
+    border-radius: var(--border-radius);
+
+}
+.register_label{
+    color: white;
+}
+.register_title{
+    color: white;
+    text-align: center;
+}
+.register_input{
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+
+.register_p{
+    color: white;
+    text-align: center;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+.register_button{
+    border-radius: var(--border-radius);
+    padding: 10px;
+   
+}

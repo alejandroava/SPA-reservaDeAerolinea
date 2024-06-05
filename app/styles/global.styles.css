@@ -1,0 +1,20 @@
+:root{
+    --primary-color: #90e0ef;
+    --secondary-color: #03045e;
+    --info-color: #c7f9cc;
+
+    --spacing-medium:50px;
+    --spacing-small: 10px;
+    --spacing-big:100px;
+
+    --border-radius: 10px;
+
+    --fontsize-title: 30px;
+    --fontsize-subtitle: 20px;
+    --fontsize-paragrafy:10px;
+}
+*{
+    box-sizing: content-box;
+    margin: 0px;
+    padding: 0px;
+}
