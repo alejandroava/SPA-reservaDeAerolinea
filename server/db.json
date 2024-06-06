@@ -1,4 +1,31 @@
 {
-    "users": [],
-    "tasks": []
+  "users": [
+    {
+      "id": 23,
+      "name": "Alejandro Velasquez",
+      "email": "alejandrovelasquez@gmail.com",
+      "birthdate": "10/12/1994",
+      "password": "password123",
+      "roleId": 1
+    },
+    {
+      "id": "ef91",
+      "name": "alejandro",
+      "email": "alejovlasquez@gmailcom",
+      "date": "2024-06-07",
+      "password": "123",
+      "roleId": 2
+    },
+    {
+      "id": "31d5",
+      "name": "alejandro",
+      "email": "alejovlasquez@gmail.com",
+      "date": "2024-06-28",
+      "password": "123",
+      "roleId": 2
+    }
+  ],
+  "booking": [
+    {}
+  ]
 }
