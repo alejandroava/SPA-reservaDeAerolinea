@@ -63,6 +63,7 @@ export function LoginScene() {
             if (validateUser) {
                 const token = Math.random().toString(36).substring(2)
                 localStorage.setItem('token', token)
+                localStorage.setItem('role', rolUser)
                 NavigateTo('/dashboard')
                 return
             } else {
@@ -75,8 +76,10 @@ export function LoginScene() {
             const users = await FetchApi('http://localhost:3000/users')
             const validateUser = users.find(user => user.email === email && user.password === password && user.roleId === 2)
             if (validateUser) {
+                
                 const token = Math.random().toString(36).substring(2)
                 localStorage.setItem('token', token)
+                localStorage.setItem('role', rolUser)
                 NavigateTo('/dashboard')
             }else {
                 alert('Credenciales incorrectas')

@@ -14,7 +14,7 @@
       "email": "alejovlasquez@gmailcom",
       "date": "2024-06-07",
       "password": "123",
-      "roleId": 2
+      "roleId": "2"
     },
     {
       "id": "31d5",
@@ -27,5 +27,25 @@
   ],
   "booking": [
     {}
+  ],
+  "flight": [
+    {
+      "id": 452,
+      "number": 102,
+      "origin": "Medellin",
+      "destination": "Mexico",
+      "departure": "10/12/2024",
+      "arrival": "10/12/2024",
+      "capacity": 140
+    },
+    {
+      "id": "2b51",
+      "number": "152",
+      "origin": "Canada",
+      "destination": "Usa",
+      "departure": "2024-06-08",
+      "arrival": "2024-06-10",
+      "capacity": "90"
+    }
   ]
 }

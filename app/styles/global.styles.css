@@ -18,3 +18,11 @@
     margin: 0px;
     padding: 0px;
 }
+h1{
+    font-size: var(--fontsize-title);
+    font-weight: 900;
+}
+
+h2{
+    font-size: var(--fontsize-subtitle);
+}
