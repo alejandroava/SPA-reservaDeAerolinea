@@ -80,6 +80,7 @@ export function LoginScene() {
                 const token = Math.random().toString(36).substring(2)
                 localStorage.setItem('token', token)
                 localStorage.setItem('role', rolUser)
+                localStorage.setItem('email',email)
                 NavigateTo('/dashboard')
             }else {
                 alert('Credenciales incorrectas')

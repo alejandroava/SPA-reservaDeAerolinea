@@ -1,0 +1,29 @@
+.navbar {
+ width: 100%;
+ background-color: var(--primary-color);
+ height: 50px;
+ font-size: var(--fontsize-subtitle);
+ color: white;
+
+}
+.navbar_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+}
+.navbar_home{
+    display: flex;
+    gap: var(--spacing-small);
+}
+.logo{
+    font-weight: bold;
+    color: var(--secondary-color)
+}
+.logout{
+    cursor: pointer;
+}
+.home{
+    cursor: pointer;
+}

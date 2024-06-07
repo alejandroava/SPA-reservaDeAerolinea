@@ -75,7 +75,7 @@ export function RegisterScene() {
                 email,
                 date,
                 password,
-                rolId: 2
+                roleId: 2
             })
             
         })

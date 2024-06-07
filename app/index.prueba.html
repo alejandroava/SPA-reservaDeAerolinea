@@ -6,8 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <a>Reservas</a>
-    </nav>
+    <div>
+        <form id="createForm">
+            <label for="flightNumber">Numero de vuelo</label>
+            <input type="text" id="flightNumber" name="flightNumber" placeholder="Ingrese numero de vuelo">
+            <label for="origin">Origin de vuelo</label>
+            <input type="text" id="origin" name="origin" placeholder="Ingrese el origin del vuelo">
+            <label for="destination">Destino de vuelo</label>
+            <input type="text" id="destination" name="destination" placeholder="Ingrese destino de vuelo">
+            <label for="departure">Fecha de salida del vuelo</label>
+            <input type="departure" id="departure" name="departure" placeholder="Ingrese fecha de salida del vuelo">
+            <label for="arrival">Fecha de llegada del vuelo</label>
+            <input type="date" id="arrival" name="arrival" placeholder="Ingrese fecha de llegada del vuelo">
+            <button type="submit" id="createButton">Crear vuelo</button>
+        </form>
+    </div>
 </body>
 </html>

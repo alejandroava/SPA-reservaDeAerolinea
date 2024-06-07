@@ -9,24 +9,21 @@
       "roleId": 1
     },
     {
-      "id": "ef91",
-      "name": "alejandro",
-      "email": "alejovlasquez@gmailcom",
-      "date": "2024-06-07",
-      "password": "123",
-      "roleId": "2"
-    },
-    {
-      "id": "31d5",
-      "name": "alejandro",
-      "email": "alejovlasquez@gmail.com",
-      "date": "2024-06-28",
+      "id": "a75a",
+      "name": "alejo",
+      "email": "alejo@gmail.com",
+      "date": "2004-03-11",
       "password": "123",
       "roleId": 2
     }
   ],
   "booking": [
-    {}
+    {
+      "id": "57d0",
+      "flightId": "2b51",
+      "userId": "a75a",
+      "bookingDate": "7/6/2024, 1:06:15 a. m."
+    }
   ],
   "flight": [
     {

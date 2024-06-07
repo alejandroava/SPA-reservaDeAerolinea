@@ -1,0 +1,35 @@
+#flightsContainer{
+    display: flex;
+    background-color: blue;
+}
+.container{
+   display: flex;
+   gap: var(--spacing-medium);
+   flex-wrap: wrap;
+   width: 90%;
+   margin: 0 auto;
+}
+article{
+    margin-top: var(--spacing-medium);
+    box-shadow: rgb(rgb(160, 160, 160), rgb(176, 185, 176), rgb(206, 206, 224));
+    border: 1px solid gray;
+    padding: var(--spacing-small);
+    background-color: var(--secondary-color);
+    color: white;
+}
+.card_title{
+    margin-bottom: var(--spacing-small);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.reservation_button{
+   display: flex;
+   justify-content: center;
+   margin-top: var(--spacing-small);
+}
+Button{
+    padding: var(--spacing-small);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+}
