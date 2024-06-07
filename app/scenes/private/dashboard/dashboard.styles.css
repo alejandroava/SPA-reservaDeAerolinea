@@ -32,4 +32,11 @@ Button{
     border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
+}.dashboard_button{
+    margin-top: var(--spacing-small);
+}
+
+.card_title{
+    margin-bottom: var(--spacing-small);
+    border-bottom: 1px solid white;
 }

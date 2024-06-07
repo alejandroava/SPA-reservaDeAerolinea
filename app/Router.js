@@ -1,7 +1,6 @@
 import { NavbarLayaoutScene } from "./components/navbarlayaout/navbarlayout.scene"
 import { routes } from "./routes"
 export function Router() {
-    alert('desde router')
     const path = window.location.pathname
 
     if (path === '/login' || path === '/register') {

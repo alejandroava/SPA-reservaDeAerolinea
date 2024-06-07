@@ -1,3 +1,4 @@
+import { NavigateTo } from "../../../Router"
 import { FetchApi } from "../../../helpers/fetchapi"
 import { RolValidate } from "../../../helpers/rolvalidate"
 import styles from './createflight.styles.css'
@@ -97,6 +98,7 @@ export function CreateFlightScene() {
                 })
                 if (createFlight) {
                     alert('Vuelo creado con exito')
+                    NavigateTo('/dashboard')
                 }
                 
             })
@@ -104,11 +106,12 @@ export function CreateFlightScene() {
         }
             
     } else {
-       
-        pageContent = '<h1>Unauthorized</h1>';
-        logic = () => {
-            console.error('Invalid role');
-        };
+        NavigateTo('/dashboard')
+       return
+        // pageContent = '<h1>Unauthorized</h1>';
+        // logic = () => {
+        //     console.error('Invalid role');
+        // };
     }
     return {
             pageContent,

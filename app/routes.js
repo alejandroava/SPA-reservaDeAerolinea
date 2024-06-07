@@ -14,6 +14,6 @@ export const routes = {
     private: [
         { path: '/dashboard', scene: DashboardScene },
         { path: '/dashboard/flight/create', scene: CreateFlightScene },
-        {path: '/dashboard/flight/edit', scene: EditFlightScene}
+        { path: '/dashboard/flight/edit', scene: EditFlightScene}
     ]
 }

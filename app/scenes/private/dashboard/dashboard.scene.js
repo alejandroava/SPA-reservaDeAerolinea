@@ -33,17 +33,17 @@ export function DashboardScene() {
                             <p>Fecha de llegada: <span id="arrival">${flight.arrival}</span></p>
                             <p>Capcidad: <span id="capacity">${flight.capacity}</span></p>
                             <div>
-                                <button type="button" class='edit_button' data-id="${flight.id}">Editar</button>
-                                <button id='deleteFlight' class='delete_buttons' type="button" data-id="${flight.id}">Eliminar</button>
+                                <button type="button" class='edit_button' data-id=${flight.id}>Editar</button>
+                                <button id='deleteFlight' class='delete_buttons' type="button" data-id=${flight.id}>Eliminar</button>
                             </div>
                         </article>
                     </div>
                 `;
             });
             const editButtons = document.querySelectorAll('.edit_button').forEach(button => {
-                button.addEventListener('click', async (e) => {
-                    const flightId = e.target.getAttribute('data-id')
-                    NavigateTo(`/dashboard/flight/edit?${flightId}`)
+                button.addEventListener('click', (e) => {
+                    // const flightId = e.target.getAttribute('data-id')
+                    NavigateTo(`/dashboard/flight/edit?flightId=${button.getAttribute("data-id")}`)
                 })
             })
             const deleteButtons = document.querySelectorAll('.delete_buttons').forEach(button => {
@@ -55,6 +55,8 @@ export function DashboardScene() {
                             'Content-Type': 'application/json'
                         }
                     })
+                    alert('Vuelo eliminado con exito')
+                    NavigateTo('/dashboard')
                 })
 
             });
