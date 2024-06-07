@@ -15,32 +15,25 @@
       "date": "2004-03-11",
       "password": "123",
       "roleId": 2
+    },
+    {
+      "id": "fb73",
+      "name": "alejandro alzate",
+      "email": "alejoalzate@gmail.com",
+      "date": "2024-06-15",
+      "password": "123",
+      "roleId": 2
     }
   ],
   "booking": [
     {
-      "id": "57d0",
+      "id": "2cbd",
       "flightId": null,
-      "userId": "a75a",
-      "bookingDate": "7/6/2024, 1:06:15 a. m."
-    },
-    {
-      "id": "9cfc",
-      "flightId": null,
-      "userId": "a75a",
-      "bookingDate": "7/6/2024, 10:31:52 a. m."
+      "userId": "fb73",
+      "bookingDate": "7/6/2024, 11:31:54 a. m."
     }
   ],
   "flight": [
-    {
-      "number": "569",
-      "origin": "Italia",
-      "destination": "Madrid",
-      "departure": "2024-06-28",
-      "arrival": "2024-06-29",
-      "capacity": "101",
-      "id": "1487"
-    },
     {
       "id": "6e9e",
       "number": "899",
@@ -67,6 +60,15 @@
       "departure": "2024-06-16",
       "arrival": "2024-06-21",
       "capacity": "300"
+    },
+    {
+      "id": "9360",
+      "number": "469",
+      "origin": "Choco",
+      "destination": "Amazonas",
+      "departure": "2024-06-20",
+      "arrival": "2024-06-25",
+      "capacity": "30"
     }
   ]
 }

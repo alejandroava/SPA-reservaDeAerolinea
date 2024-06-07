@@ -3,12 +3,18 @@ import { routes } from "./routes"
 export function Router() {
     const path = window.location.pathname
 
-    if (path === '/login' || path === '/register') {
+    if (path === '/login' || path === '/register' || path === '/') {
         if (localStorage.getItem('token')) {
             NavigateTo('/dashboard')
             return
         }
     }
+    if (path === '/') {
+        if (!localStorage.getItem('token')) {
+            NavigateTo('/login')
+            return
+       }
+   }
     
     const publicRoute = routes.public.find(route => route.path === path)
     const privateRoute = routes.private.find(route => route.path === path)
@@ -23,6 +29,8 @@ export function Router() {
             NavbarLayaoutScene(pageContent, logic)
             return
         }
+        NavigateTo('/login')
+        return
     }
     NavigateTo('/not-found')
 

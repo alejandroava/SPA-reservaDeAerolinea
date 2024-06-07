@@ -5,7 +5,6 @@ import styles from './dashboard.styles.css'
 
 export function DashboardScene() {
     const role = RolValidate()
-    console.log('mirole', role)
     let pageContent = ''
     let logic = () => {}
 

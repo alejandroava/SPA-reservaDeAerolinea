@@ -55,7 +55,7 @@ export  function EditFlightScene() {
             form.addEventListener('submit', async (e) => {
                 e.preventDefault()
                 await FetchApi(`http://localhost:3000/flight/${flightId}`, {
-                    method: 'PUT',
+                    method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
                     },
