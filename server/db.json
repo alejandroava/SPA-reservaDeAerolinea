@@ -20,29 +20,20 @@
   "booking": [
     {
       "id": "57d0",
-      "flightId": "2b51",
+      "flightId": null,
       "userId": "a75a",
       "bookingDate": "7/6/2024, 1:06:15 a. m."
     }
   ],
   "flight": [
     {
-      "id": 452,
-      "number": 102,
-      "origin": "Medellin",
-      "destination": "Mexico",
-      "departure": "10/12/2024",
-      "arrival": "10/12/2024",
-      "capacity": 140
-    },
-    {
-      "id": "2b51",
-      "number": "152",
-      "origin": "Canada",
-      "destination": "Usa",
-      "departure": "2024-06-08",
-      "arrival": "2024-06-10",
-      "capacity": "90"
+      "id": "1487",
+      "number": "569",
+      "origin": "Italia",
+      "destination": "Madrid",
+      "departure": "2024-06-28",
+      "arrival": "2024-06-29",
+      "capacity": "100"
     }
   ]
 }

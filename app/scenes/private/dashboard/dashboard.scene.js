@@ -34,24 +34,36 @@ export function DashboardScene() {
                             <p>Capcidad: <span id="capacity">${flight.capacity}</span></p>
                             <div>
                                 <button type="button" data-id="${flight.id}">Editar</button>
-                                <button type="button" data-id="${flight.id}">Eliminar</button>
+                                <button id='deleteFlight' class='delete_buttons' type="button" data-id="${flight.id}">Eliminar</button>
                             </div>
                         </article>
                     </div>
                 `;
             });
-        };
+            const deleteButtons = document.querySelectorAll('.delete_buttons').forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    const flightId = e.target.getAttribute('data-id')
+                    await FetchApi(`http://localhost:3000/flight/${flightId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                })
+
+            });
+        }
     } else if (role === "User") {
-        pageContent = `
+            pageContent = `
             <h1>Vuelos actuales</h1>
             <div class='${styles.container}' id='flightsContainer'></div>
         `;
-        logic = async () => {
+            logic = async () => {
             
-            const cards = document.getElementById('flightsContainer');
-            const dataFlight = await FetchApi('http://localhost:3000/flight');
-            dataFlight.forEach(flight => {
-                cards.innerHTML += `    
+                const cards = document.getElementById('flightsContainer');
+                const dataFlight = await FetchApi('http://localhost:3000/flight');
+                dataFlight.forEach(flight => {
+                    cards.innerHTML += `    
                     <div class='${styles.cards_container}'>
                         <article class='${styles.card}'>
                             <h2 class='${styles.card_title}'>Informacion del vuelo</h2>
@@ -67,56 +79,57 @@ export function DashboardScene() {
                         </article>
                     </div>
                 `;
-            });
-            const reservationButtons = document.querySelectorAll('.reservationButtons').forEach(button => {
-                button.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    const confirmReservation = confirm('¿Esta seguro de hacer la reservar?')
-                    if (!confirmReservation) {
-                        return;
-                    }
-                    const flightId = e.target.getAttribute('data-id')
-                    console.log('este es flight', flightId)
-                    const users = await FetchApi('http://localhost:3000/users')
-                    const emailUser = localStorage.getItem('email')
-                    console.log(emailUser)
-                    const user = users.find(user => user.email === emailUser)
+                });
+                const reservationButtons = document.querySelectorAll('.reservationButtons').forEach(button => {
+                    button.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        const confirmReservation = confirm('¿Esta seguro de hacer la reservar?')
+                        if (!confirmReservation) {
+                            return;
+                        }
+                        const flightId = e.target.getAttribute('data-id')
+                        console.log('este es flight', flightId)
+                        const users = await FetchApi('http://localhost:3000/users')
+                        const emailUser = localStorage.getItem('email')
+                        console.log(emailUser)
+                        const user = users.find(user => user.email === emailUser)
 
-                    if (user) {
-                        const userId = user.id
-                        console.log('soy userid', userId)
-                        const now = new Date();
-                        const bookingDate = now.toLocaleString()
+                        if (user) {
+                            const userId = user.id
+                            console.log('soy userid', userId)
+                            const now = new Date();
+                            const bookingDate = now.toLocaleString()
                 
-                        await FetchApi('http://localhost:3000/booking', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                flightId,
-                                userId,
-                                bookingDate,
+                            await FetchApi('http://localhost:3000/booking', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    flightId,
+                                    userId,
+                                    bookingDate,
 
+                                })
                             })
-                        })
-                    } else {
-                        alert('usuario no encontrado')
-                    }
+                        } else {
+                            alert('usuario no encontrado')
+                        }
                
-                })
-            });
-        }
-        }else {
+                    })
+                });
+            }
+        } else {
             pageContent = '<h1>No esta autorizado</h1>';
             logic = () => {
                 console.error('role invalido');
             };
 
         
-    }
-    return {
+        }
+        return {
             pageContent,
             logic
         };
 }
+
