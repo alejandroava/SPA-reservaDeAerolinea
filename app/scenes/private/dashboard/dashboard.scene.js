@@ -7,7 +7,7 @@ export function DashboardScene() {
     const role = RolValidate()
     console.log('mirole', role)
     let pageContent = ''
-    let logic = () => { }
+    let logic = () => {}
 
     if (role === "Admin") {
         pageContent = `
@@ -33,13 +33,19 @@ export function DashboardScene() {
                             <p>Fecha de llegada: <span id="arrival">${flight.arrival}</span></p>
                             <p>Capcidad: <span id="capacity">${flight.capacity}</span></p>
                             <div>
-                                <button type="button" data-id="${flight.id}">Editar</button>
+                                <button type="button" class='edit_button' data-id="${flight.id}">Editar</button>
                                 <button id='deleteFlight' class='delete_buttons' type="button" data-id="${flight.id}">Eliminar</button>
                             </div>
                         </article>
                     </div>
                 `;
             });
+            const editButtons = document.querySelectorAll('.edit_button').forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    const flightId = e.target.getAttribute('data-id')
+                    NavigateTo(`/dashboard/flight/edit?${flightId}`)
+                })
+            })
             const deleteButtons = document.querySelectorAll('.delete_buttons').forEach(button => {
                 button.addEventListener('click', async (e) => {
                     const flightId = e.target.getAttribute('data-id')
